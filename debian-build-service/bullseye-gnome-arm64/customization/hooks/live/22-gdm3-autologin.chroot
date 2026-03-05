@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Enable gdm3 autologin for root user
+if [ -e /etc/gdm3/daemon.conf ]; then
+  sed -i "s|^#  AutomaticLoginEnable = .*|AutomaticLoginEnable = true|" /etc/gdm3/daemon.conf
+  sed -i "s|^#  AutomaticLogin = .*|AutomaticLogin = root|" /etc/gdm3/daemon.conf
+fi
+
+if [ -e /etc/pam.d/gdm-password ]; then
+  sed -i "/user != root quiet_success/s/^/#/" /etc/pam.d/gdm-password
+fi
+
+if [ -e /etc/pam.d/gdm-autologin ]; then
+  sed -i "/user != root quiet_success/s/^/#/" /etc/pam.d/gdm-autologin
+fi

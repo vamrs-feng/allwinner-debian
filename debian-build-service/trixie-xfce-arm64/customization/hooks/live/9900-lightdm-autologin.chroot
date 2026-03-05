@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Enable lightdm autologin for root user
+if [ -e /etc/lightdm/lightdm.conf ]; then
+  sed -i "s|^#autologin-user=.*|autologin-user=root|" /etc/lightdm/lightdm.conf
+  sed -i "s|^#autologin-user-timeout=.*|autologin-user-timeout=delay|" /etc/lightdm/lightdm.conf
+fi
+
+if [ -e /etc/pam.d/lightdm-autologin ]; then
+  sed -i "/user != root quiet_success/s/^/#/" /etc/pam.d/lightdm-autologin
+fi

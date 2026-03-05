@@ -1,0 +1,7 @@
+#!/bin/sh  
+
+echo "I: create guest user"
+adduser --gecos guest --disabled-login guest
+
+echo "I: set guest user password"
+echo "guest:guest" | chpasswd

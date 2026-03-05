@@ -1,0 +1,6 @@
+#!/bin/sh  
+
+echo "I: modify fstab"
+sudo chmod 777 /etc/fstab
+sudo echo "/dev/mmcblk0p4          /               ext4            rw,relatime     0 1" >> /etc/fstab
+sudo chmod 644 /etc/fstab

@@ -1,0 +1,16 @@
+[Unit]
+Description=Setup AW platform WiFi/BT environment
+Before=NetworkManager.service bluetooth.service
+After=systemd-modules-load.service sysinit.target local-fs.target systemd-udevd.service
+Requires=systemd-modules-load.service
+Wants=bluetooth.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/awwifibt.sh
+StandardOutput=journal+console
+StandardError=inherit
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

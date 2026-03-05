@@ -1,0 +1,17 @@
+deb http://mirrors.ustc.edu.cn/debian bullseye main non-free contrib
+deb-src http://mirrors.ustc.edu.cn/debian bullseye main non-free contrib
+
+deb https://mirrors.ustc.edu.cn/debian/ bullseye-backports main non-free contrib
+deb-src https://mirrors.ustc.edu.cn/debian/ bullseye-backports main non-free contrib
+
+deb http://mirrors.ustc.edu.cn/debian bullseye-backports-sloppy main non-free contrib
+deb-src http://mirrors.ustc.edu.cn/debian bullseye-backports-sloppy main non-free contrib
+
+deb http://mirrors.ustc.edu.cn/debian bullseye-proposed-updates main non-free contrib
+deb-src http://mirrors.ustc.edu.cn/debian bullseye-proposed-updates main non-free contrib
+
+deb http://mirrors.ustc.edu.cn/debian bullseye-updates main non-free contrib
+deb-src http://mirrors.ustc.edu.cn/debian bullseye-updates main non-free contrib
+
+deb http://mirrors.ustc.edu.cn/debian-security bullseye-security main non-free contrib
+deb-src http://mirrors.ustc.edu.cn/debian-security bullseye-security main non-free contrib

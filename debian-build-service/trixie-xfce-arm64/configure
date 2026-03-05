@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# (C) 2025 OpenSEA <OpenSEA@allwinnertech.com>
+# Create configuration for debian13 live-build.
+# You need live-build qemu-aarch64-static  debootstrap package installed.
+
+set -e
+
+CURRENT_MIRRORS="https://mirrors.ustc.edu.cn"
+
+echo "I: create configuration begin..."
+
+lb config \
+ --mirror-bootstrap "${CURRENT_MIRRORS}/debian" \
+ --mirror-chroot "${CURRENT_MIRRORS}/debian" \
+ --mirror-chroot-security "${CURRENT_MIRRORS}/debian-security" \
+ --mirror-binary "${CURRENT_MIRRORS}/debian" \
+ --mirror-binary-security "${CURRENT_MIRRORS}/debian-security" \
+ --apt-indices false \
+ --apt-recommends false \
+ --apt-secure false \
+ --apt-option "-o Acquire::Retries=3 -y" \
+ --architectures arm64 \
+ --archive-areas 'main contrib non-free' \
+ --backports false \
+ --binary-filesystem ext4 \
+ --binary-images tar \
+ --build-with-chroot true \
+ --bootappend-live "hostname=Tina-AioT username=guest" \
+ --bootloader "grub-efi" \
+ --bootstrap-qemu-arch arm64 \
+ --bootstrap-qemu-static /usr/bin/qemu-aarch64-static \
+ --cache false \
+ --chroot-filesystem none \
+ --compression gzip \
+ --debootstrap-options "--variant=minbase --include=apt-transport-https,gnupg" \
+ --distribution trixie \
+ --firmware-binary false \
+ --firmware-chroot false \
+ --gzip-options '-9 --rsyncable' \
+ --iso-publisher 'Linaro; http://www.linaro.org/; linaro-dev@lists.linaro.org' \
+ --iso-volume 'Linaro trixie $(date +%Y%m%d-%H:%M)' \
+ --linux-flavours none \
+ --linux-packages none \
+ --mode debian \
+ --security true \
+ --system normal \
+ --updates true \
+ --verbose
+
+echo "I: copy customization"
+test -d customization && cp -rf customization/* config/
+
+echo "I: done"

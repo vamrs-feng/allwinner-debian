@@ -1,0 +1,13 @@
+[Unit]
+Description=Setup sunxi platform environment
+DefaultDependencies=no
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/allwinner.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=sysinit.target
+

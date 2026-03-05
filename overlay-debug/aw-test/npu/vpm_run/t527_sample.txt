@@ -1,0 +1,5 @@
+[network]
+/aw-test/npu/vpm_run/v2/network_binary.nb
+[input]
+/aw-test/npu/vpm_run/input_0.dat
+

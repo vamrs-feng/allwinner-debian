@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packages>
+		<!--metadata: path: deb source dir path -->
+		<!--metadata: name: deb name, this cant used when platform set to common -->
+		<!--metadata: install: first_boot:install in first boot select:only copy to debian rootfs  preinstall:has installed in debian rootfs,no copy first-boot-restart:restart service after install -->
+		<!--metadata: platform: common:all platform can used  IC: only this IC support -->
+		<!--priority: install priority: default is 3, max is 5 -->
+		<!--debian: debian version, optional. Values format:
+			1. "all": support all debian versions
+			2. "11": only support debian 11
+			3. "13": only support debian 13
+			4. "11|13": support both debian 11 and 13
+		   Directory structure recommendation:
+		   packages/arm64/xxx/
+		   ├── debian11/    # debian 11 specific packages
+		   ├── debian13/    # debian 13 specific packages
+		   └── all-versions/ # shared packages for all versions
+		   Note: The system will automatically select packages based on the rootfs version -->
+
+		<!-- chromium package -->
+		<package path="packages/arm64/chromium" install="first-boot" priority="2" platform="common"/>
+
+		<!-- gst packages:  gst-omx-generic1.0 -->
+		<package path="packages/arm64/gst-omx-generic1.0" install="first-boot" priority="4" name="gst-omx-listcomponents_1.18.3-1_arm64.deb" platform="common" debian="all" />
+		<package path="packages/arm64/gst-omx-generic1.0" install="first-boot" priority="4" name="gstreamer1.0-omx-allwinner_1.18.3-1.1_arm64.deb" platform="common" debian="all" />
+		<package path="packages/arm64/gst-omx-generic1.0" install="first-boot" priority="4" name="gstreamer1.0-omx-allwinner-config_1.18.3-1.1_arm64.deb" platform="common" debian="all" />
+
+		<!-- gst packages:  gst-plugins-bad1.0 -->
+		<package path="packages/arm64/gst-plugins-bad1.0" install="first-boot" priority="4" name="gir1.2-gst-plugins-bad-1.0_1.18.4-3+deb11u5.1_arm64.deb" platform="common" debian="11" />
+		<package path="packages/arm64/gst-plugins-bad1.0" install="first-boot" priority="4" name="gstreamer1.0-opencv_1.18.4-3+deb11u5.1_arm64.deb" platform="common" debian="11" />
+		<package path="packages/arm64/gst-plugins-bad1.0" install="first-boot" priority="4" name="libgstreamer-opencv1.0-0_1.18.4-3+deb11u5.1_arm64.deb" platform="common" debian="11" />
+		<package path="packages/arm64/gst-plugins-bad1.0" install="first-boot" priority="4" name="gstreamer1.0-plugins-bad_1.18.4-3+deb11u5.1_arm64.deb" platform="common" debian="11" />
+		<package path="packages/arm64/gst-plugins-bad1.0" install="first-boot" priority="4" name="gstreamer1.0-plugins-bad-apps_1.18.4-3+deb11u5.1_arm64.deb" platform="common" debian="11" />
+		<package path="packages/arm64/gst-plugins-bad1.0" install="first-boot" priority="4" name="libgstreamer-plugins-bad1.0-0_1.18.4-3+deb11u5.1_arm64.deb" platform="common" debian="11" />
+		<package path="packages/arm64/gst-plugins-bad1.0" install="first-boot" priority="4" name="libgstreamer-plugins-bad1.0-dev_1.18.4-3+deb11u5.1_arm64.deb" platform="common" debian="11" />
+
+		<package path="packages/arm64/gst-plugins-bad1.0" install="first-boot" priority="4" name="gir1.2-gst-plugins-bad-1.0_1.26.2-3_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-bad1.0" install="first-boot" priority="4" name="gstreamer1.0-opencv_1.26.2-3_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-bad1.0" install="first-boot" priority="4" name="libgstreamer-opencv1.0-0_1.26.2-3_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-bad1.0" install="first-boot" priority="4" name="gstreamer1.0-plugins-bad_1.26.2-3_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-bad1.0" install="first-boot" priority="4" name="gstreamer1.0-plugins-bad-apps_1.26.2-3_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-bad1.0" install="first-boot" priority="4" name="libgstreamer-plugins-bad1.0-0_1.26.2-3_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-bad1.0" install="first-boot" priority="4" name="libgstreamer-plugins-bad1.0-dev_1.26.2-3_arm64.deb" platform="common" debian="13" />
+
+		<!-- gst packages:  gst-plugins-base1.0 -->
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gir1.2-gst-plugins-base-1.0_1.18.4-2+deb11u3.1_arm64.deb" platform="common" debian="11" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gstreamer1.0-alsa_1.18.4-2+deb11u3.1_arm64.deb" platform="common" debian="11" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gstreamer1.0-gl_1.18.4-2+deb11u3.1_arm64.deb" platform="common" debian="11" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gstreamer1.0-plugins-base_1.18.4-2+deb11u3.1_arm64.deb" platform="common" debian="11" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gstreamer1.0-plugins-base-apps_1.18.4-2+deb11u3.1_arm64.deb" platform="common" debian="11" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gstreamer1.0-x_1.18.4-2+deb11u3.1_arm64.deb" platform="common" debian="11" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="libgstreamer-gl1.0-0_1.18.4-2+deb11u3.1_arm64.deb" platform="common" debian="11" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="libgstreamer-plugins-base1.0-0_1.18.4-2+deb11u3.1_arm64.deb" platform="common" debian="11" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="libgstreamer-plugins-base1.0-dev_1.18.4-2+deb11u3.1_arm64.deb" platform="common" debian="11" />
+
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gir1.2-gst-plugins-base-1.0_1.26.2-1_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gstreamer1.0-alsa_1.26.2-1_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gstreamer1.0-gl_1.26.2-1_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gstreamer1.0-plugins-base_1.26.2-1_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gstreamer1.0-plugins-base-apps_1.26.2-1_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gstreamer1.0-x_1.26.2-1_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="libgstreamer-gl1.0-0_1.26.2-1_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="libgstreamer-plugins-base1.0-0_1.26.2-1_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="libgstreamer-plugins-base1.0-dev_1.26.2-1_arm64.deb" platform="common" debian="13" />
+
+		<!-- gst packages:  gst-plugins-good1.0 -->
+		<package path="packages/arm64/gst-plugins-good1.0" install="first-boot" priority="4" name="gstreamer1.0-plugins-good_1.18.4-2+deb11u3.1_arm64.deb" platform="common" debian="11" />
+		<package path="packages/arm64/gst-plugins-good1.0" install="first-boot" priority="4" name="gstreamer1.0-pulseaudio_1.18.4-2+deb11u3.1_arm64.deb" platform="common" debian="11" />
+
+		<package path="packages/arm64/gst-plugins-good1.0" install="first-boot" priority="4" name="gstreamer1.0-plugins-good_1.26.2-1_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-good1.0" install="first-boot" priority="4" name="gstreamer1.0-pulseaudio_1.26.2-1_arm64.deb" platform="common" debian="13" />
+
+		<!-- gst packages:  gst-plugins-ugly1.0 -->
+		<package path="packages/arm64/gst-plugins-ugly1.0" install="first-boot" priority="4" name="gstreamer1.0-plugins-ugly_1.18.4-2+deb11u1_arm64.deb" platform="common" debian="11" />
+		<package path="packages/arm64/gst-plugins-ugly1.0" install="first-boot" priority="4" name="gstreamer1.0-plugins-ugly_1.26.3-4_arm64.deb" platform="common" debian="13" />
+
+		<!-- gst packages:  gstreamer -->
+		<package path="packages/arm64/gstreamer" install="first-boot" priority="4" name="gir1.2-gstreamer-1.0_1.18.4-2.1+deb11u1_arm64.deb" platform="common" debian="11" />
+		<package path="packages/arm64/gstreamer" install="first-boot" priority="4" name="gstreamer1.0-tools_1.18.4-2.1+deb11u1_arm64.deb" platform="common" debian="11" />
+		<package path="packages/arm64/gstreamer" install="first-boot" priority="4" name="libgstreamer1.0-dev_1.18.4-2.1+deb11u1_arm64.deb" platform="common" debian="11" />
+		<package path="packages/arm64/gstreamer" install="first-boot" priority="4" name="libgstreamer1.0-0_1.18.4-2.1+deb11u1_arm64.deb" platform="common" debian="11" />
+
+		<package path="packages/arm64/gstreamer" install="first-boot" priority="4" name="gir1.2-gstreamer-1.0_1.26.2-2_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gstreamer" install="first-boot" priority="4" name="gstreamer1.0-tools_1.26.2-2_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gstreamer" install="first-boot" priority="4" name="libgstreamer1.0-dev_1.26.2-2_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gstreamer" install="first-boot" priority="4" name="libgstreamer1.0-0_1.26.2-2_arm64.deb" platform="common" debian="13" />
+
+		<!-- glmark2 packages -->
+		<package path="packages/arm64/glmark2" install="first-boot" priority="5" name="glmark2-data_2023.01+dfsg-3_all.deb" platform="common" />
+		<package path="packages/arm64/glmark2" install="first-boot" priority="5" name="glmark2-es2-x11_2023.01+dfsg-3_arm64.deb" platform="common" />
+		<package path="packages/arm64/glmark2" install="first-boot" priority="5" name="glmark2-drm_2023.01+dfsg-3_arm64.deb" platform="common" />
+		<package path="packages/arm64/glmark2" install="first-boot" priority="5" name="glmark2-wayland_2023.01+dfsg-3_arm64.deb" platform="common" />
+		<package path="packages/arm64/glmark2" install="first-boot" priority="5" name="glmark2-es2-drm_2023.01+dfsg-3_arm64.deb" platform="common" />
+		<package path="packages/arm64/glmark2" install="first-boot" priority="5" name="glmark2-x11_2023.01+dfsg-3_arm64.deb" platform="common" />
+		<package path="packages/arm64/glmark2" install="first-boot" priority="5" name="glmark2-es2-wayland_2023.01+dfsg-3_arm64.deb" platform="common" />
+
+		<!-- isp packages -->
+		<package path="packages/arm64/libAWIspApi" install="first-boot" priority="2" name="libAWIspApi_601_1.0.0_arm64.deb" platform="A523|A527|T527|T527V" />
+		<package path="packages/arm64/libAWIspApi" install="first-boot" priority="2" name="libAWIspApi_602_1.0.0_arm64.deb" platform="A733|T736" />
+		<package path="packages/arm64/libAWIspApi" install="first-boot" priority="2" name="libAWIspApi_606_1.0.0_arm64.deb" platform="A537|A333|T537" />
+
+		<!--libcedarc packages-->
+		<package path="packages/arm64/libcedarc" install="first-boot" priority="2" name="libcedarc-dev_1.0.0_arm64.deb" platform="A523|A527|T527|T527V" />
+		<package path="packages/arm64/libcedarc" install="first-boot" priority="2" name="libcedarc-dev_2.0.0_arm64.deb" platform="A733|T736" />
+
+		<!--npu packages-->
+		<package path="packages/arm64/npu" install="first-boot" priority="2" name="npu-runtime_1.13.0_arm64.deb" platform="T527" />
+		<package path="packages/arm64/npu" install="first-boot" priority="2" name="npu-runtime_2.0.3_arm64.deb" platform="A733|T736" />
+
+		<!--xserver packages-->
+		<package path="packages/arm64/xserver" install="first-boot" priority="1" name="xserver-xorg-img-bxm_1.21.1-2_arm64.deb" platform="A733|T736" />
+		<package path="packages/arm64/xserver" install="first-boot" priority="1" name="xserver-xorg-mesa-g57_1.21.1-2_arm64.deb" platform="A523|A527|T527|T527V" />
+
+		<!-- other packages, this need to install by yourself-->
+		<package path="packages/arm64/ethernet" install="select" platform="common" />
+		<package path="packages/arm64/others" install="select" platform="common" />
+</packages>

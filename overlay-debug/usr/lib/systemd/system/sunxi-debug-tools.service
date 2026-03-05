@@ -1,0 +1,12 @@
+[Unit]
+Description=sunxi debug tools Service
+After=local-fs.target
+
+[Service]
+Type=forking
+ExecStart=/usr/local/bin/adb_conf.sh start
+ExecStop=/usr/local/bin/adb_conf.sh stop
+
+[Install]
+WantedBy=sysinit.target
+

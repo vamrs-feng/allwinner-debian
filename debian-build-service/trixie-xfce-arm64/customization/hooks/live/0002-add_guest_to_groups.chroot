@@ -1,0 +1,28 @@
+#!/bin/sh -x
+
+DEFGROUPS="adm,dialout,cdrom,audio,dip,video,plugdev,bluetooth,pulse-access,systemd-journal,netdev,staff"
+
+IFS=','
+
+for group in $DEFGROUPS; do
+	if grep -q "^$group:" /etc/group ; then
+	   echo "Group '$group' exists in /etc/group"
+	else
+	   echo "Group '$group' does not exists in /etc/group, creating"
+	   groupadd --system $group || echo "W:Failed to create group $group"
+	fi
+done
+
+unset IFS
+
+echo "I: add guest to ($DEFGROUPS) groups"
+
+if id -u guest > /dev/null 2>&1; then
+    echo "I:adding guest to group:$DEFGROUPS"
+    usermod -a -G ${DEFGROUPS} guest
+else
+    echo "E:user 'guest' does not exist, skip add"
+    exit 1
+fi
+
+echo "I:All groups processed successfully"
