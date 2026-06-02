@@ -1,6 +1,5 @@
 #!/bin/bash
 
-set -euo pipefail
 PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 INIT_LOG="/var/log/allwinner-init.log"
 
@@ -51,17 +50,22 @@ get_device_for_partition() {
 }
 
 # Mount specified partition
+# Parameters:
+#   $1: mount_point - Mount point name (e.g., userdata)
+#   $2: partition_name - Optional, partition name to look up (e.g., UDISK)
+#                        If not provided, mount_point is used as partition name
 mount_partition() {
-    local partition_name="$1"
+    local mount_point="$1"
+    local partition_name="${2:-$mount_point}"
 
-    log_info "Starting mount script for $partition_name partition"
+    log_info "Starting mount script for $partition_name partition to /$mount_point"
 
     # Get partition information
     local partitions_string=$(get_partitions_from_cmdline)
 
     if [[ -z "$partitions_string" ]]; then
         log_error "No partitions parameter found in /proc/cmdline"
-        exit 1
+        return 1
     fi
 
     log_info "Partitions string from cmdline: $partitions_string"
@@ -71,7 +75,7 @@ mount_partition() {
 
     if [[ -z "$partition_device" ]]; then
         log_error "No $partition_name partition found in partitions parameter"
-        exit 1
+        return 1
     fi
 
     log_info "Found $partition_name device: $partition_device"
@@ -81,18 +85,18 @@ mount_partition() {
     log_info "Device path: $device_path"
 
     # Create mount point
-    log_info "Creating mount point /$partition_name"
-    mkdir -p "/$partition_name"
+    log_info "Creating mount point /$mount_point"
+    mkdir -p "/$mount_point"
 
     # Check if partition exists
     if [[ ! -b "$device_path" ]]; then
         log_error "Device $device_path does not exist"
-        exit 1
+        return 1
     fi
 
     # Check if already mounted
-    if mountpoint -q "/$partition_name"; then
-        log_info "/$partition_name is already mounted"
+    if mountpoint -q "/$mount_point"; then
+        log_info "/$mount_point is already mounted"
         return 0
     fi
 
@@ -105,11 +109,11 @@ mount_partition() {
     fi
 
     # Mount partition
-    log_info "Mounting $device_path to /$partition_name"
-    mount -t ext4 -o sync,data=journal "$device_path" "/$partition_name/"
+    log_info "Mounting $device_path to /$mount_point"
+    mount -t ext4 -o sync,data=journal "$device_path" "/$mount_point/"
 
-    log_info "Successfully mounted $partition_name partition"
+    log_info "Successfully mounted $partition_name partition to /$mount_point"
 }
 
 mount_partition "userdata"
-
+mount_partition "userdata" "UDISK"

@@ -53,22 +53,22 @@
 		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="libgstreamer-plugins-base1.0-0_1.18.4-2+deb11u3.1_arm64.deb" platform="common" debian="11" />
 		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="libgstreamer-plugins-base1.0-dev_1.18.4-2+deb11u3.1_arm64.deb" platform="common" debian="11" />
 
-		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gir1.2-gst-plugins-base-1.0_1.26.2-1_arm64.deb" platform="common" debian="13" />
-		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gstreamer1.0-alsa_1.26.2-1_arm64.deb" platform="common" debian="13" />
-		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gstreamer1.0-gl_1.26.2-1_arm64.deb" platform="common" debian="13" />
-		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gstreamer1.0-plugins-base_1.26.2-1_arm64.deb" platform="common" debian="13" />
-		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gstreamer1.0-plugins-base-apps_1.26.2-1_arm64.deb" platform="common" debian="13" />
-		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gstreamer1.0-x_1.26.2-1_arm64.deb" platform="common" debian="13" />
-		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="libgstreamer-gl1.0-0_1.26.2-1_arm64.deb" platform="common" debian="13" />
-		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="libgstreamer-plugins-base1.0-0_1.26.2-1_arm64.deb" platform="common" debian="13" />
-		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="libgstreamer-plugins-base1.0-dev_1.26.2-1_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gir1.2-gst-plugins-base-1.0_1.26.2-deb13u1_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gstreamer1.0-alsa_1.26.2-deb13u1_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gstreamer1.0-gl_1.26.2-deb13u1_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gstreamer1.0-plugins-base_1.26.2-deb13u1_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gstreamer1.0-plugins-base-apps_1.26.2-deb13u1_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="gstreamer1.0-x_1.26.2-deb13u1_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="libgstreamer-gl1.0-0_1.26.2-deb13u1_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="libgstreamer-plugins-base1.0-0_1.26.2-deb13u1_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-base1.0" install="first-boot" priority="4" name="libgstreamer-plugins-base1.0-dev_1.26.2-deb13u1_arm64.deb" platform="common" debian="13" />
 
 		<!-- gst packages:  gst-plugins-good1.0 -->
 		<package path="packages/arm64/gst-plugins-good1.0" install="first-boot" priority="4" name="gstreamer1.0-plugins-good_1.18.4-2+deb11u3.1_arm64.deb" platform="common" debian="11" />
 		<package path="packages/arm64/gst-plugins-good1.0" install="first-boot" priority="4" name="gstreamer1.0-pulseaudio_1.18.4-2+deb11u3.1_arm64.deb" platform="common" debian="11" />
 
-		<package path="packages/arm64/gst-plugins-good1.0" install="first-boot" priority="4" name="gstreamer1.0-plugins-good_1.26.2-1_arm64.deb" platform="common" debian="13" />
-		<package path="packages/arm64/gst-plugins-good1.0" install="first-boot" priority="4" name="gstreamer1.0-pulseaudio_1.26.2-1_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-good1.0" install="first-boot" priority="4" name="gstreamer1.0-plugins-good_1.26.2-deb13u1.2_arm64.deb" platform="common" debian="13" />
+		<package path="packages/arm64/gst-plugins-good1.0" install="first-boot" priority="4" name="gstreamer1.0-pulseaudio_1.26.2-deb13u1.2_arm64.deb" platform="common" debian="13" />
 
 		<!-- gst packages:  gst-plugins-ugly1.0 -->
 		<package path="packages/arm64/gst-plugins-ugly1.0" install="first-boot" priority="4" name="gstreamer1.0-plugins-ugly_1.18.4-2+deb11u1_arm64.deb" platform="common" debian="11" />
@@ -101,7 +101,8 @@
 
 		<!--libcedarc packages-->
 		<package path="packages/arm64/libcedarc" install="first-boot" priority="2" name="libcedarc-dev_1.0.0_arm64.deb" platform="A523|A527|T527|T527V" />
-		<package path="packages/arm64/libcedarc" install="first-boot" priority="2" name="libcedarc-dev_2.0.0_arm64.deb" platform="A733|T736" />
+		<package path="packages/arm64/libcedarc" install="first-boot" priority="2" name="libcedarc-dev_2.0.0_arm64.deb" platform="A733|T736|T536" />
+		<package path="packages/arm64/libcedarc" install="first-boot" priority="2" name="libcedarc-dev_3.0.0_arm64.deb" platform="A537|A333" />
 
 		<!--npu packages-->
 		<package path="packages/arm64/npu" install="first-boot" priority="2" name="npu-runtime_1.13.0_arm64.deb" platform="T527" />
@@ -109,7 +110,7 @@
 
 		<!--xserver packages-->
 		<package path="packages/arm64/xserver" install="first-boot" priority="1" name="xserver-xorg-img-bxm_1.21.1-2_arm64.deb" platform="A733|T736" />
-		<package path="packages/arm64/xserver" install="first-boot" priority="1" name="xserver-xorg-mesa-g57_1.21.1-2_arm64.deb" platform="A523|A527|T527|T527V" />
+		<package path="packages/arm64/xserver" install="first-boot" priority="1" name="xserver-xorg-mesa-g57_1.21.1-2_arm64.deb" platform="A523|A527|T527|T527V|A537|A333" />
 
 		<!-- other packages, this need to install by yourself-->
 		<package path="packages/arm64/ethernet" install="select" platform="common" />
